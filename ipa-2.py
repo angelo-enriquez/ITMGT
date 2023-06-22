@@ -37,14 +37,12 @@ def shift_letter(letter, shift):
     '''
     # Replace `pass` with your code.
     # Stay within the function. Only use the parameters as input. The function should return your answer.
+    if letter == " ":
+        return " "
+
     position = ord(letter)
-    new_position = position + shift
+    new_position = ord('A') + (position - ord('A') + shift) % 26
     
-    if new_position > ord('Z'):
-        new_position -= 26
-    elif new_position < ord('A'):
-        new_position += 26
-            
     shifted = chr(new_position)
     return shifted
 
